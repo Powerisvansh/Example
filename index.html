@@ -8,97 +8,110 @@
   <meta name="description" content="Premium luxury real estate UI with cinematic dark design, glassmorphism, and high-end architectural branding." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="./font-overrides.css" />
 </head>
 <body>
   <div class="page-shell">
+
+    <!-- HEADER -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="#home" class="brand">
           <span class="brand-mark">Luxe</span>
           <span class="brand-label">Estates</span>
         </a>
-
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#story">Story</a>
           <a href="#properties">Properties</a>
           <a href="#architecture">Architecture</a>
           <a href="#faq">FAQ</a>
-          <a href="#portfolio" class="nav-button">Portfolio</a>
+          <a href="#contact" class="nav-button">Contact Us</a>
         </nav>
-
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span>
         </button>
       </div>
     </header>
 
+    <!-- MOBILE MENU -->
     <nav class="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-inner container">
         <a href="#story">Story</a>
         <a href="#properties">Properties</a>
         <a href="#architecture">Architecture</a>
         <a href="#faq">FAQ</a>
-        <a href="#portfolio" class="btn btn--ghost">Portfolio</a>
+        <a href="#contact" class="btn btn--ghost">Contact Us</a>
       </div>
     </nav>
 
     <main>
+
+      <!-- HERO -->
       <section id="home" class="hero-section">
         <div class="hero-backdrop"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-          <div class="hero-copy">
+          <div class="hero-copy fade-up">
             <p class="eyebrow">Ultra Luxury Real Estate</p>
             <h1>Luxury Homes That Redefine Modern Style of Living</h1>
             <p class="hero-description">A cinematic collection of architectural reserve designed for elite lifestyles, immersive comfort, and timeless presence.</p>
             <div class="hero-actions">
               <a href="#properties" class="btn btn--primary">Explore Collections</a>
-              <a href="#portfolio" class="btn btn--ghost">View Portfolio</a>
+              <a href="#story" class="btn btn--ghost">Our Story</a>
             </div>
             <div class="hero-meta">
               <div class="hero-stat">
-                <span>120+</span>
+                <span class="counter" data-target="120">0</span><span class="counter-suffix">+</span>
                 <p>Premium Homes Built</p>
               </div>
               <div class="hero-stat hero-stat--muted">
-                <span>18</span>
+                <span class="counter" data-target="18">0</span>
                 <p>Signature Locations</p>
+              </div>
+              <div class="hero-stat hero-stat--muted">
+                <span class="counter" data-target="98">0</span><span class="counter-suffix">%</span>
+                <p>Client Satisfaction</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="hero-card">
+        <div class="hero-card fade-up" style="--delay: 0.3s">
           <span class="hero-card__tag">Featured Estate</span>
           <h2>Lakeview Residence</h2>
-          <p>4 Beds • 5 Baths • 3,250 ft²</p>
-          <span class="hero-card__price">$8.5M</span>
+          <p>4 Beds &bull; 5 Baths &bull; 3,250 ft&sup2;</p>
+          <div class="hero-card__footer">
+            <span class="hero-card__price">$8.5M</span>
+            <a href="#properties" class="btn btn--primary btn--sm">View Details</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span></span>
         </div>
       </section>
 
+      <!-- STORY -->
       <section id="story" class="section story-section">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header fade-up">
             <p class="eyebrow">About / Story</p>
             <h2>Architectural narratives crafted for modern luxury living.</h2>
-            <p>Refined design, ambient materials and editorial composition – for homes that feel cinematic, calm and exquisitely tailored.</p>
+            <p>Refined design, ambient materials and editorial composition — for homes that feel cinematic, calm and exquisitely tailored.</p>
           </div>
           <div class="story-grid">
-            <div class="story-visual">
+            <div class="story-visual fade-up">
               <div class="story-image story-image--wide"></div>
               <div class="story-image story-image--stacked"></div>
             </div>
-            <aside class="story-details">
+            <aside class="story-details fade-up" style="--delay: 0.15s">
               <p class="story-intro">Each residence is composed to honor light, texture and spatial drama. We build with intention, delivering architectural luxury for the discerning client.</p>
               <div class="story-stats">
                 <div class="stat-card">
-                  <span>120+</span>
+                  <span class="counter" data-target="120">0</span><span>+</span>
                   <p>Premium Homes Built</p>
                 </div>
                 <div class="stat-card">
-                  <span>50+</span>
+                  <span class="counter" data-target="50">0</span><span>+</span>
                   <p>Architectural Partners</p>
                 </div>
                 <div class="stat-card">
@@ -106,64 +119,83 @@
                   <p>Concierge Support</p>
                 </div>
               </div>
+              <a href="#contact" class="btn btn--primary">Schedule a Consultation</a>
             </aside>
           </div>
         </div>
       </section>
 
+      <!-- PROPERTIES -->
       <section id="properties" class="section properties-section">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header fade-up">
             <p class="eyebrow">Featured Properties</p>
             <h2>Curated residences, previewed with cinematic polish.</h2>
+            <p>Each property is handpicked for its architectural distinction, location prestige, and investment potential.</p>
           </div>
           <div class="property-carousel">
-            <article class="property-card">
-              <div class="property-image property-image--one"></div>
+            <article class="property-card fade-up">
+              <div class="property-image property-image--one">
+                <span class="property-badge">For Sale</span>
+              </div>
               <div class="property-body">
-                <p class="property-location">Lakeview, California</p>
+                <p class="property-location">&#x1F4CD; Lakeview, California</p>
                 <h3>Sunset Villa</h3>
                 <ul class="property-meta">
                   <li>5 bd</li>
                   <li>6 ba</li>
-                  <li>4,950 ft²</li>
+                  <li>4,950 ft&sup2;</li>
                 </ul>
-                <p class="property-price">$11,400,000</p>
+                <div class="property-footer">
+                  <p class="property-price">$11,400,000</p>
+                  <a href="#contact" class="btn btn--ghost btn--sm">Enquire</a>
+                </div>
               </div>
             </article>
-            <article class="property-card">
-              <div class="property-image property-image--two"></div>
+            <article class="property-card fade-up" style="--delay: 0.1s">
+              <div class="property-image property-image--two">
+                <span class="property-badge property-badge--gold">Exclusive</span>
+              </div>
               <div class="property-body">
-                <p class="property-location">Palm Beach, Florida</p>
+                <p class="property-location">&#x1F4CD; Palm Beach, Florida</p>
                 <h3>Ocean Ridge Estate</h3>
                 <ul class="property-meta">
                   <li>7 bd</li>
                   <li>8 ba</li>
-                  <li>7,200 ft²</li>
+                  <li>7,200 ft&sup2;</li>
                 </ul>
-                <p class="property-price">$18,250,000</p>
+                <div class="property-footer">
+                  <p class="property-price">$18,250,000</p>
+                  <a href="#contact" class="btn btn--ghost btn--sm">Enquire</a>
+                </div>
               </div>
             </article>
-            <article class="property-card">
-              <div class="property-image property-image--three"></div>
+            <article class="property-card fade-up" style="--delay: 0.2s">
+              <div class="property-image property-image--three">
+                <span class="property-badge">For Sale</span>
+              </div>
               <div class="property-body">
-                <p class="property-location">Aspen, Colorado</p>
+                <p class="property-location">&#x1F4CD; Aspen, Colorado</p>
                 <h3>Summit Pavilion</h3>
                 <ul class="property-meta">
                   <li>6 bd</li>
                   <li>7 ba</li>
-                  <li>5,900 ft²</li>
+                  <li>5,900 ft&sup2;</li>
                 </ul>
-                <p class="property-price">$14,800,000</p>
+                <div class="property-footer">
+                  <p class="property-price">$14,800,000</p>
+                  <a href="#contact" class="btn btn--ghost btn--sm">Enquire</a>
+                </div>
               </div>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- ARCHITECTURE -->
       <section id="architecture" class="section architecture-section">
         <div class="container architecture-grid">
-          <div class="architecture-copy">
+          <div class="architecture-copy fade-up">
             <p class="eyebrow">Architecture Showcase</p>
             <h2>Modern mansions and interiors elevated with polished detail.</h2>
             <p>Explore cinematic spaces layered with glass, stone and ambient lighting. Every frame is composed for a high-end editorial presentation.</p>
@@ -171,5 +203,224 @@
               <p class="panel-title">Signature Residences</p>
               <p class="panel-copy">Designed for buyers who appreciate material richness, expansive views and extraordinary craft.</p>
             </div>
+            <a href="#contact" class="btn btn--primary">Request a Private Tour</a>
           </div>
-          <div class="architecture-grid-images">
+          <div class="architecture-grid-images fade-up" style="--delay: 0.15s">
+            <div class="architecture-card architecture-card--main"></div>
+            <div class="architecture-card architecture-card--side"></div>
+            <div class="architecture-card architecture-card--accent"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVESTMENT CTA -->
+      <section class="investment-section">
+        <div class="investment-backdrop"></div>
+        <div class="investment-overlay"></div>
+        <div class="container investment-content">
+          <div class="investment-copy fade-up">
+            <p class="eyebrow">Investment Opportunity</p>
+            <h2>Real estate that grows with your ambitions.</h2>
+            <p>Our portfolio spans the most sought-after markets in North America. Speak with our advisors to discover exclusive off-market listings.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn--primary">Talk to an Advisor</a>
+              <a href="#properties" class="btn btn--ghost">Browse Listings</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section faq-section">
+        <div class="container">
+          <div class="section-header fade-up">
+            <p class="eyebrow">FAQ</p>
+            <h2>Answers to your most important questions.</h2>
+          </div>
+          <div class="faq-grid">
+            <div class="faq-card fade-up">
+              <button class="faq-question" aria-expanded="false">
+                How do I schedule a property viewing?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Contact our concierge team via the form below or call us directly. We offer private in-person tours and virtual walkthroughs for international clients.</p>
+              </div>
+            </div>
+            <div class="faq-card fade-up" style="--delay: 0.05s">
+              <button class="faq-question" aria-expanded="false">
+                Do you offer off-market listings?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. Our exclusive network gives clients access to off-market properties not listed publicly. Register your interest to receive curated alerts.</p>
+              </div>
+            </div>
+            <div class="faq-card fade-up" style="--delay: 0.1s">
+              <button class="faq-question" aria-expanded="false">
+                What markets do you operate in?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>We operate across 18 signature locations including California, Florida, Colorado, New York, and select international markets in Europe and the UAE.</p>
+              </div>
+            </div>
+            <div class="faq-card fade-up" style="--delay: 0.15s">
+              <button class="faq-question" aria-expanded="false">
+                Can you assist with financing?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>We partner with premier private banks and wealth managers to facilitate bespoke financing solutions for high-net-worth buyers.</p>
+              </div>
+            </div>
+            <div class="faq-card fade-up" style="--delay: 0.2s">
+              <button class="faq-question" aria-expanded="false">
+                Is property management available?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. Our white-glove property management service handles everything from maintenance to tenant relations, available 24/7.</p>
+              </div>
+            </div>
+            <div class="faq-card fade-up" style="--delay: 0.25s">
+              <button class="faq-question" aria-expanded="false">
+                How are properties valued?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Each property undergoes a rigorous appraisal by certified luxury real estate valuators, factoring in location, architecture, amenities, and market trends.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section contact-section">
+        <div class="container">
+          <div class="section-header fade-up">
+            <p class="eyebrow">Get In Touch</p>
+            <h2>Begin your journey to extraordinary living.</h2>
+            <p>Our advisors are ready to guide you through every step of your luxury real estate experience.</p>
+          </div>
+          <div class="contact-grid fade-up">
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" placeholder="John" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="interest">I'm interested in</label>
+                <select id="interest">
+                  <option value="">Select an option</option>
+                  <option>Buying a Property</option>
+                  <option>Selling a Property</option>
+                  <option>Investment Advice</option>
+                  <option>Property Management</option>
+                  <option>Private Tour</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+            </form>
+            <div class="contact-info">
+              <div class="contact-info-card">
+                <span class="contact-icon">&#x1F4DE;</span>
+                <div>
+                  <p class="contact-label">Phone</p>
+                  <p class="contact-value">+1 (800) 555-LUXE</p>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <span class="contact-icon">&#x2709;&#xFE0F;</span>
+                <div>
+                  <p class="contact-label">Email</p>
+                  <p class="contact-value">hello@luxeestates.com</p>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <span class="contact-icon">&#x1F4CD;</span>
+                <div>
+                  <p class="contact-label">Headquarters</p>
+                  <p class="contact-value">Beverly Hills, CA 90210</p>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <span class="contact-icon">&#x23F0;</span>
+                <div>
+                  <p class="contact-label">Office Hours</p>
+                  <p class="contact-value">Mon–Sat, 9AM – 7PM PST</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#home" class="brand">
+              <span class="brand-mark">Luxe</span>
+              <span class="brand-label">Estates</span>
+            </a>
+            <p class="brand-description">Curating the world's most extraordinary residential properties for discerning buyers and investors.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="LinkedIn">LI</a>
+              <a href="#" aria-label="Twitter">TW</a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="link-group">
+              <span>Company</span>
+              <a href="#story">Our Story</a>
+              <a href="#architecture">Architecture</a>
+              <a href="#properties">Properties</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <div class="link-group">
+              <span>Services</span>
+              <a href="#contact">Buy</a>
+              <a href="#contact">Sell</a>
+              <a href="#contact">Invest</a>
+              <a href="#contact">Manage</a>
+            </div>
+          </div>
+          <div class="footer-newsletter">
+            <p class="eyebrow" style="margin:0">Newsletter</p>
+            <p style="color:var(--muted);font-size:0.95rem;margin:0">Receive exclusive listings and market insights.</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn--primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="site-copy">
+          <p>&copy; 2025 Luxe Estates. All rights reserved. &nbsp;&bull;&nbsp; <a href="#" style="color:var(--muted);text-decoration:none">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="#" style="color:var(--muted);text-decoration:none">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
