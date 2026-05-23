@@ -1,6 +1,39 @@
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
 
+    // Custom cursor
+    var dot = document.getElementById('cursorDot');
+    var ring = document.getElementById('cursorRing');
+    var mouseX = 0, mouseY = 0;
+    var ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+    });
+
+    (function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    })();
+
+    var hoverTargets = document.querySelectorAll('a, button, .property-card, .stat-card, .faq-card, .contact-info-card');
+    hoverTargets.forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        dot.classList.add('is-hovering');
+        ring.classList.add('is-hovering');
+      });
+      el.addEventListener('mouseleave', function() {
+        dot.classList.remove('is-hovering');
+        ring.classList.remove('is-hovering');
+      });
+    });
+
     // 3D mouse-tracking tilt on cards
     var tiltCards = document.querySelectorAll('.property-card, .hero-card, .stat-card, .contact-info-card');
     tiltCards.forEach(function(card) {
@@ -16,6 +49,8 @@
         card.style.boxShadow = '';
       });
     });
+
+    // Mobile menu
     var menuButton = document.querySelector('.nav-toggle');
     var mobileMenu = document.querySelector('.mobile-menu');
     var mobileLinks = document.querySelectorAll('.mobile-menu a');
@@ -35,9 +70,7 @@
       link.addEventListener('click', function() {
         if (mobileMenu.classList.contains('is-open')) {
           mobileMenu.classList.remove('is-open');
-          if (menuButton) {
-            menuButton.setAttribute('aria-expanded', 'false');
-          }
+          if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
           mobileMenu.setAttribute('aria-hidden', 'true');
         }
       });
@@ -48,9 +81,7 @@
       button.addEventListener('click', function() {
         var expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', String(!expanded));
-        if (answer) {
-          answer.classList.toggle('open');
-        }
+        if (answer) answer.classList.toggle('open');
       });
     });
 
@@ -69,5 +100,6 @@
         }, 1500);
       });
     }
+
   });
 })();
