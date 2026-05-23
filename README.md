@@ -6,7 +6,7 @@ A cinematic, dark-themed luxury real estate website built with pure HTML, CSS, a
 
 ## Preview
 
-![Luxe Estates Preview](./assets/preview.png)
+![Luxe Estates Preview](./assets/hero%20section.png)
 
 > To update: take a screenshot of the live site, save it as `preview.png` inside the `assets/` folder, then push.
 
