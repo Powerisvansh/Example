@@ -4,9 +4,19 @@ A cinematic, dark-themed luxury real estate website built with pure HTML, CSS, a
 
 ---
 
+## Preview
+
+![Luxe Estates Preview](./assets/preview.png)
+
+> To update: take a screenshot of the live site, save it as `preview.png` inside the `assets/` folder, then push.
+
+---
+
 ## Live Preview
 
 > Open `index.html` in your browser or deploy via GitHub Pages.
+>
+> 🌐 **[https://powerisvansh.github.io/Example/](https://powerisvansh.github.io/Example/)**
 
 ---
 
