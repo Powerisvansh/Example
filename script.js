@@ -1,5 +1,21 @@
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
+
+    // 3D mouse-tracking tilt on cards
+    var tiltCards = document.querySelectorAll('.property-card, .hero-card, .stat-card, .contact-info-card');
+    tiltCards.forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'perspective(900px) rotateY(' + (x * 14) + 'deg) rotateX(' + (-y * 10) + 'deg) translateY(-8px) scale(1.02)';
+        card.style.boxShadow = (x * 20) + 'px ' + (y * 20 + 30) + 'px 80px rgba(0,0,0,0.5)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+      });
+    });
     var menuButton = document.querySelector('.nav-toggle');
     var mobileMenu = document.querySelector('.mobile-menu');
     var mobileLinks = document.querySelectorAll('.mobile-menu a');

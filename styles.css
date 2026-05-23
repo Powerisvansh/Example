@@ -1125,3 +1125,177 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── 3D Effects ── */
+
+/* Perspective wrapper for tilt cards */
+.property-card,
+.stat-card,
+.hero-card,
+.contact-info-card,
+.faq-card,
+.architecture-panel {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+}
+
+/* Floating depth layers on hero card */
+.hero-card {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-4deg);
+  box-shadow: 8px 16px 60px rgba(0,0,0,0.6), 0 2px 0 rgba(255,255,255,0.05) inset;
+}
+
+.hero-card:hover {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-8px);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 2px 0 rgba(255,255,255,0.07) inset;
+}
+
+/* Property cards 3D lift */
+.property-card {
+  transform: perspective(900px) rotateX(2deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.06) inset;
+}
+
+.property-card:hover {
+  transform: perspective(900px) rotateX(0deg) translateY(-14px) scale(1.02);
+  box-shadow: 0 50px 120px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.08) inset;
+}
+
+/* Stat cards subtle tilt */
+.stat-card {
+  transform: perspective(600px) rotateX(3deg);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.05) inset;
+}
+
+.stat-card:hover {
+  transform: perspective(600px) rotateX(0deg) translateY(-6px);
+  box-shadow: 0 28px 70px rgba(0,0,0,0.45);
+}
+
+/* FAQ cards */
+.faq-card:hover {
+  transform: perspective(800px) rotateX(1deg) translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+/* Contact info cards */
+.contact-info-card {
+  transform: perspective(700px) rotateX(2deg);
+}
+
+.contact-info-card:hover {
+  transform: perspective(700px) rotateX(0deg) translateY(-5px);
+  box-shadow: 0 24px 60px rgba(201,165,109,0.12);
+}
+
+/* Architecture panel */
+.architecture-panel {
+  transform: perspective(800px) rotateY(3deg);
+  box-shadow: -8px 20px 60px rgba(0,0,0,0.4);
+}
+
+/* Story images layered depth */
+.story-image--wide {
+  transform: perspective(1200px) rotateY(-3deg) rotateX(2deg);
+  box-shadow: 20px 40px 100px rgba(0,0,0,0.5);
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+}
+
+.story-image--wide:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.02);
+  box-shadow: 0 60px 120px rgba(0,0,0,0.55);
+}
+
+.story-image--stacked {
+  transform: perspective(1200px) rotateY(3deg) rotateX(-1deg);
+  box-shadow: -12px 30px 80px rgba(0,0,0,0.4);
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+}
+
+.story-image--stacked:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.02);
+  box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+}
+
+/* Architecture image grid depth */
+.architecture-card--main {
+  transform: perspective(1400px) rotateX(3deg);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+}
+
+.architecture-card--main:hover {
+  transform: perspective(1400px) rotateX(0deg) scale(1.01);
+  box-shadow: 0 60px 130px rgba(0,0,0,0.6);
+}
+
+.architecture-card--side {
+  transform: perspective(800px) rotateY(-4deg) rotateX(2deg);
+  box-shadow: 12px 24px 70px rgba(0,0,0,0.45);
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+}
+
+.architecture-card--side:hover {
+  transform: perspective(800px) rotateY(0deg) rotateX(0deg) translateY(-6px);
+}
+
+.architecture-card--accent {
+  transform: perspective(800px) rotateY(4deg) rotateX(2deg);
+  box-shadow: -12px 24px 70px rgba(0,0,0,0.45);
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+}
+
+.architecture-card--accent:hover {
+  transform: perspective(800px) rotateY(0deg) rotateX(0deg) translateY(-6px);
+}
+
+/* Contact form 3D */
+.contact-form {
+  transform: perspective(1000px) rotateY(2deg);
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+}
+
+.contact-form:hover {
+  transform: perspective(1000px) rotateY(0deg);
+  box-shadow: 0 60px 120px rgba(0,0,0,0.45);
+}
+
+/* Section header underline accent */
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+  border-radius: 999px;
+}
+
+/* Glowing gold shimmer on primary buttons */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255,255,255,0.18);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn--primary:hover::after {
+  left: 130%;
+}
